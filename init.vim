@@ -95,6 +95,84 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """ 模块化配置
 source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
 
+
+
+" ==================== Install Plugins with Vim-Plug ====================
 call plug#begin('$HOME/.config/nvim/autoload')
+Plug 'itchyny/vim-cursorword'   "动态高亮当前光标下的单词
+" Treesitter  语法高亮相关，暂时不知道有啥用
+"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+" Pretty Dress 高亮配置
+Plug 'theniceboy/nvim-deus'
+"Plug 'arzg/vim-colors-xcode'
+" Status line  状态栏
+Plug 'theniceboy/eleline.vim', { 'branch': 'no-scrollbar' }
+
+" General Highlighter 代码高亮和突出显示
+Plug 'NvChad/nvim-colorizer.lua'
+Plug 'RRethy/vim-illuminate'
+" Auto Complete
+Plug 'neoclide/coc.nvim', { 'commit': '63dd239bfe02998810b39d039827e2510885b57b', 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': 'v0.0.79'}
+Plug 'wellle/tmux-complete.vim'
+" File navigation
+Plug 'ibhagwan/fzf-lua'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'theniceboy/joshuto.nvim'
+Plug 'kevinhwang91/rnvimr'
+Plug 'airblade/vim-rooter'
+Plug 'pechorin/any-jump.vim'
+" Dart
+Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart', 'vim-plug'] }
+" Git
+Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
+Plug 'theniceboy/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
+Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'cohama/agit.vim'
+Plug 'kdheepak/lazygit.nvim'
+
+
+
 call plug#end()
+
+
+" ==================== Dress up my vim ====================
+set termguicolors " enable true colors support
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+silent! color deus
+
+hi NonText ctermfg=gray guifg=grey10
+"hi SpecialKey ctermfg=blue guifg=grey70
+
+" COC补全
+
+source ~/.config/nvim/vimconfig/cocconfig.vim  " 分文件配置coc相关
+
+" ==================== eleline.vim ====================
+let g:airline_powerline_fonts = 0
+" ==================== gitsigns.nvim ====================
+lua <<EOF
+require('gitsigns').setup({
+	signs = {
+    add          = { hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+    change       = { hl = 'GitSignsChange', text = '░', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+    delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+    topdelete    = { hl = 'GitSignsDelete', text = '▔', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+    changedelete = { hl = 'GitSignsChange', text = '▒', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+  },
+})
+EOF
+nnoremap H :Gitsigns preview_hunk_inline<CR>
+nnoremap <LEADER>gr :Gitsigns reset_hunk<CR>
+nnoremap <LEADER>gb :Gitsigns blame_line<CR>
+nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>
+nnoremap <LEADER>g= :Gitsigns next_hunk<CR>
+
+
+
 

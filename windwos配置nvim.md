@@ -30,3 +30,21 @@ New-Alias -Name vim -Value nvim
 执行配置文件
 .$PROFILE
 
+
+# 插件的安装  
+安装node 添加到path  
+coc.nvim的配置  
+npm install -g yarn
+
+
+
+cd ~/.config/nvim/plugged/coc.nvim
+yarn install --frozen-lockfile
+yarn build
+
+TSIntall c 插件
+TSIntall lua
+TSIntall vim
+解决报错 Ts
+
+
