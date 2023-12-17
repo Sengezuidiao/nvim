@@ -16,7 +16,7 @@ filetype plugin on
 filetype plugin indent on
 
 
-
+let g:python3_host_prog=$HOME.'/.config/nvim/windowsPythonEnv/neovimpy/Scripts/python.exe'
 
 set autochdir " 默认情况下，工作目录为启动时到目录，如vim afile afile  :w存到到是当前到工作目录
 set exrc      " 允许Vim 在当前目录中查找并执行 .vimrc 文件
