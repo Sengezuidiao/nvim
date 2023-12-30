@@ -15,9 +15,11 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-
+if has('win32') || has('win64')
 let g:python3_host_prog=$HOME.'/.config/nvim/windowsPythonEnv/neovimpy/Scripts/python.exe'
-
+else
+let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'
+endif
 set autochdir " 默认情况下，工作目录为启动时到目录，如vim afile afile  :w存到到是当前到工作目录
 set exrc      " 允许Vim 在当前目录中查找并执行 .vimrc 文件
 set secure    " 禁用shell等外部命令,暂时不知道啥用
