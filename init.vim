@@ -1,4 +1,3 @@
-"
 " 下载vimplug 如果vimplug不存在
 if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs 
@@ -6,6 +5,17 @@ if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC " 启动nvim时候插件一个一个到安装--sync 然后更新source 使vim配置生效
 endif
 
+" Create a _machine_specific.vim file to adjust machine specific stuff, like python interpreter location 
+let has_machine_specific_file = 1
+if empty(glob($HOME.'/.config/nvim/_machine_specific.vim'))
+	let has_machine_specific_file = 0
+	if has('win32') || has('win64')
+		silent! exec '!copy ' . expand('$HOME/.config/nvim/default_configs/_machine_specific_mac.vim') . ' ' . expand('$HOME/.config/nvim/_machine_specific.vim')
+	else
+		silent! exec "!cp $HOME/.config/nvim/default_configs/_machine_specific_mac.vim $HOME/.config/nvim/_machine_specific.vim"
+	endif
+endif
+source $HOME/.config/nvim/_machine_specific.vim
 "" ===
 """ === system
 """ ===
@@ -16,11 +26,6 @@ filetype plugin on
 filetype plugin indent on
 
 
-if has('win32') || has('win64')
-let g:python3_host_prog=$HOME.'/.config/nvim/windowsPythonEnv/neovimpy/Scripts/python.exe'
-else
-let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'
-endif
 set autochdir " 默认情况下，工作目录为启动时到目录，如vim afile afile  :w存到到是当前到工作目录
 set exrc      " 允许Vim 在当前目录中查找并执行 .vimrc 文件
 set secure    " 禁用shell等外部命令,暂时不知道啥用
@@ -92,9 +97,21 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " ==================== Basic Mappings ====================
 let mapleader=" "   " 将leader按键设置为空格键
+" Search
+noremap <LEADER><CR> :nohlsearch<CR>   " 空格回车取消搜索的高亮
+" Find pair
+noremap ,. %
 
+" ==================== Insert Mode Cursor Movement ====================
+inoremap <C-a> <ESC>A
 
-
+" ==================== Window management ====================
+" Use <space> + new arrow keys for moving the cursor around windows
+noremap <LEADER>w <C-w>w
+noremap <LEADER><Up> <C-w>k
+noremap <LEADER><Down> <C-w>j
+noremap <LEADER><Left> <C-w>h
+noremap <LEADER><Right> <C-w>l
 
 """ 模块化配置
 source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
@@ -121,7 +138,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'neoclide/coc.nvim', { 'commit': '63dd239bfe02998810b39d039827e2510885b57b', 'do': 'yarn install --frozen-lockfile' }
 " Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': 'v0.0.79'}
 Plug 'wellle/tmux-complete.vim'
-" File navigation
+" File navigation 文件查找
 Plug 'ibhagwan/fzf-lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -129,8 +146,7 @@ Plug 'theniceboy/joshuto.nvim'
 Plug 'kevinhwang91/rnvimr'
 Plug 'airblade/vim-rooter'
 Plug 'pechorin/any-jump.vim'
-" Dart
-Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart', 'vim-plug'] }
+
 " Git
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 Plug 'theniceboy/fzf-gitignore', { 'do': ':UpdateRemotePlugins' }
