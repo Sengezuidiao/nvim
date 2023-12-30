@@ -10,7 +10,7 @@ let has_machine_specific_file = 1
 if empty(glob($HOME.'/.config/nvim/_machine_specific.vim'))
 	let has_machine_specific_file = 0
 	if has('win32') || has('win64')
-		silent! exec '!copy ' . expand('$HOME/.config/nvim/default_configs/_machine_specific_mac.vim') . ' ' . expand('$HOME/.config/nvim/_machine_specific.vim')
+		silent! exec '!copy ' . expand('$HOME/.config/nvim/default_configs/_machine_specific_win.vim') . ' ' . expand('$HOME/.config/nvim/_machine_specific.vim')
 	else
 		silent! exec "!cp $HOME/.config/nvim/default_configs/_machine_specific_mac.vim $HOME/.config/nvim/_machine_specific.vim"
 	endif
@@ -132,18 +132,20 @@ Plug 'theniceboy/nvim-deus'
 Plug 'theniceboy/eleline.vim', { 'branch': 'no-scrollbar' }
 
 " General Highlighter 代码高亮和突出显示
-Plug 'NvChad/nvim-colorizer.lua'
-Plug 'RRethy/vim-illuminate'
+Plug 'NvChad/nvim-colorizer.lua'   "高性能荧光笔
+Plug 'RRethy/vim-illuminate'     " 光标下突出显示
+
 " Auto Complete
-Plug 'neoclide/coc.nvim', { 'commit': '63dd239bfe02998810b39d039827e2510885b57b', 'do': 'yarn install --frozen-lockfile' }
-" Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': 'v0.0.79'}
-Plug 'wellle/tmux-complete.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'wellle/tmux-complete.vim'  "vim 与TMUX结合，目前用不到
+
+
 " File navigation 文件查找
 Plug 'ibhagwan/fzf-lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'theniceboy/joshuto.nvim'
-Plug 'kevinhwang91/rnvimr'
+"Plug 'kevinhwang91/rnvimr'   "Rnvimr is a NeoVim plugin that allows you to use Ranger in a floating window,目前没有用ranger.
 Plug 'airblade/vim-rooter'
 Plug 'pechorin/any-jump.vim'
 
@@ -192,6 +194,7 @@ nnoremap <LEADER>gr :Gitsigns reset_hunk<CR> "当光标位于某一行上时，�
 nnoremap <LEADER>gb :Gitsigns blame_line<CR> "当光标位于某一行上时，按下 <Leader>gb 键，将显示当前行的 git blame 信息
 nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>   " 将移动到上一个 git diff 区域
 nnoremap <LEADER>g= :Gitsigns next_hunk<CR>    " 移动到下一个 git diff 区域
+
 
 
 " ==================== nvim-treesitter ===================="

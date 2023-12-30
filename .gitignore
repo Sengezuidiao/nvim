@@ -1,4 +1,7 @@
 tmp/
+#忽略windows pyhton的虚拟环境
 windowsPythonEnv/
-autoload/
+#忽略MAC的python虚拟环境
 macPythonEnv/
+#忽略所下载的插件加载路径，避免不同系统下冲突
+autoload/

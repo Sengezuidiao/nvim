@@ -2,7 +2,7 @@
 	"\ 'https://github.com/theniceboy/coc-tailwindcss',
 " ==================== coc.nvim ====================
 let g:coc_global_extensions = [
-	\ 'coc-ccls',
+	\ 'coc-clangd',
 	\ 'coc-css',
 	\ 'coc-diagnostic',
 	\ 'coc-docker',
