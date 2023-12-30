@@ -16,8 +16,9 @@ filetype plugin on
 filetype plugin indent on
 
 
-let g:python3_host_prog=$HOME.'/.config/nvim/windowsPythonEnv/neovimpy/Scripts/python.exe'
-
+if has('win32') || has('win64')
+	let g:python3_host_prog=$HOME.'/.config/nvim/windowsPythonEnv/neovimpy/Scripts/python.exe'
+endif
 set autochdir " 默认情况下，工作目录为启动时到目录，如vim afile afile  :w存到到是当前到工作目录
 set exrc      " 允许Vim 在当前目录中查找并执行 .vimrc 文件
 set secure    " 禁用shell等外部命令,暂时不知道啥用
@@ -87,7 +88,13 @@ set virtualedit=block " 这个设置允许你在可视模式下通过 Ctrl 键�
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif "光标位置还原到上次关闭文件时的位置
 
-
+" ==================== Basic Mappings ====================
+l[coc.nvim]: UnhandledRejection: Cannot read properties of undefined (reading 'split')
+TypeError: Cannot read properties of undefined (reading 'split')
+    at Extensions4.runtimeExtensionStats (C:\Users\14545\.config\nvim\autoload\coc.nvim\build\index.js:81860:33)
+    at Extensions4.init (C:\Users\14545\.config\nvim\autoload\coc.nvim\build\index.js:81643:31)
+    at async Plugin.init (C:\Users\14545\.config\nvim\autoload\coc.nvim\build\index.js:92401:9)
+    at async EventEmitter.<anonymous> (C:\Users\14545\.config\nvim\autoload\coc.nvim\build\index.js:92507:13)et mapleader=" "   " 将leader按键设置为空格键
 
 
 
@@ -167,12 +174,20 @@ require('gitsigns').setup({
   },
 })
 EOF
-nnoremap H :Gitsigns preview_hunk_inline<CR>
-nnoremap <LEADER>gr :Gitsigns reset_hunk<CR>
-nnoremap <LEADER>gb :Gitsigns blame_line<CR>
-nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>
-nnoremap <LEADER>g= :Gitsigns next_hunk<CR>
+nnoremap H :Gitsigns preview_hunk_inline<CR> "当光标位于某一行上时，按下 H 键，将显示当前行的 git diff
+nnoremap <LEADER>gr :Gitsigns reset_hunk<CR> "当光标位于某一行上时，按下 <Leader>gr 键，将重置当前行的 git diff
+nnoremap <LEADER>gb :Gitsigns blame_line<CR> "当光标位于某一行上时，按下 <Leader>gb 键，将显示当前行的 git blame 信息
+nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>   " 将移动到上一个 git diff 区域
+nnoremap <LEADER>g= :Gitsigns next_hunk<CR>    " 移动到下一个 git diff 区域
 
+
+" ==================== nvim-treesitter ===================="
+"
+if has('win32') || has('win64')
+lua <<EOF
+	require'nvim-treesitter.install'.compilers = { "clang" }
+EOF
+endif
 
 
 
