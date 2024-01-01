@@ -1,8 +1,9 @@
-#转战NeoVim
+#转战NeoVim  
 
 
 windows 安装neovim
-winget install neovim 
+
+`winget install neovim `
 
 
 search那里，搜neovim，打开文件所在目录，将相应的文件添加到系变量，这个不是新手就不教了
@@ -10,9 +11,10 @@ search那里，搜neovim，打开文件所在目录，将相应的文件添加�
 
 自定义config文件的位置和苹果电脑的保一致
 
-新建用户变量
-XDG_CONFIG_HOME
-C:\Users\14545\.config\
+新建环境变量
+`XDG_CONFIG_HOME`
+
+$HOME\.config\
 建立配置文件的文件夹
 mkdir -p $HOME\.config\nvim 建立文件夹，手动建立也一样
 `cd .config 在这git clone git@github.com:Sengezuidiao/nvim.git`
@@ -42,9 +44,17 @@ cd ~/.config/nvim/plugged/coc.nvim
 yarn install --frozen-lockfile
 yarn build
 
+# nvim-treesitter 这个插件安装的大坑
+高亮C语言还得安装clangd,我好像是用winget安装的然后用everything搜索添加到环境变量
 TSIntall c 插件
 TSIntall lua
 TSIntall vim
 解决报错 Ts
 
 
+# 插件安装  
+## Markdown  
+```
+npm -g install instant-markdown-d
+
+```
