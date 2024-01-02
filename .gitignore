@@ -5,3 +5,5 @@ windowsPythonEnv/
 macPythonEnv/
 #忽略所下载的插件加载路径，避免不同系统下冲突
 autoload/
+#忽略tmp
+tmp/
