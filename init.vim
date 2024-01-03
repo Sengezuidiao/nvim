@@ -212,6 +212,7 @@ EOF
 " ==================== vim-instant-markdown ====================
 
 let g:instant_markdown_slow = 0               " 预览速度
+let g:mkdp_browser = 'chromium'
 let g:instant_markdown_autostart = 0        " 手动启动
 "let g:instant_markdown_open_to_the_world = 1  " 不允许局域网其他设备查看
 "let g:instant_markdown_allow_unsafe_content = 1   " 允许加载不安全内容
@@ -219,9 +220,6 @@ let g:instant_markdown_autostart = 0        " 手动启动
 "let g:instant_markdown_mathjax = 1                " 控制是否启用 MathJax 渲染数学公式
 let g:instant_markdown_autoscroll = 1             "  控制是否启用自动滚动
 
-
-" Compile function
-"
 noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
