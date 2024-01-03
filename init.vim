@@ -163,6 +163,10 @@ Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn in
 call plug#end()
 
 
+" Snippets
+Plug 'theniceboy/vim-snippets'
+
+
 " ==================== Dress up my vim ====================
 set termguicolors " enable true colors support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
