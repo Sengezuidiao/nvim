@@ -158,8 +158,8 @@ Plug 'cohama/agit.vim'
 Plug 'kdheepak/lazygit.nvim'
 
 " Markdown
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
-
+"Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'suan/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 call plug#end()
 
 
@@ -210,13 +210,13 @@ EOF
 
 
 " ==================== vim-instant-markdown ====================
-"
-let g:instant_markdown_slow = 1               " 预览速度
-let g:instant_markdown_autostart = 0          " 手动启动
-"let g:instant_markdown_open_to_the_world = 0  " 不允许局域网其他设备查看
-"let g:instant_markdown_allow_unsafe_content = 1   " 允许加载不安全内容
-"let g:instant_markdown_allow_external_content = 1 " 控制是否允许加载外部内容（例如通过网络加载的图片等）
-"let g:instant_markdown_mathjax = 1                " 控制是否启用 MathJax 渲染数学公式
+
+let g:instant_markdown_slow = 0               " 预览速度
+let g:instant_markdown_autostart = 1        " 手动启动
+let g:instant_markdown_open_to_the_world = 1  " 不允许局域网其他设备查看
+let g:instant_markdown_allow_unsafe_content = 1   " 允许加载不安全内容
+let g:instant_markdown_allow_external_content = 1 " 控制是否允许加载外部内容（例如通过网络加载的图片等）
+let g:instant_markdown_mathjax = 1                " 控制是否启用 MathJax 渲染数学公式
 let g:instant_markdown_autoscroll = 1             "  控制是否启用自动滚动
 
 
