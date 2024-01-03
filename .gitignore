@@ -9,3 +9,4 @@ autoload/
 # 不忽略文件夹下的特定文件
 #忽略tmp
 tmp/
+
