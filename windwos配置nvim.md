@@ -1,6 +1,15 @@
 #转战NeoVim  
 
 
+# 配置pyhton虚拟环境
+
+```
+cd $HOME\.config\nvim\windowsPythonEnv
+python -m venv neovimpy
+.\neovimpy\Scripts\activate
+pip install pynvim
+```
+
 windows 安装neovim
 
 `winget install neovim `
@@ -22,8 +31,10 @@ mkdir -p $HOME\.config\nvim 建立文件夹，手动建立也一样
 
 给nvim起别名
 管理员打开终端
+```
 Set-ExecutionPolicy RemoteSigned
 New-Item -ItemType File -Path $PROFILE -Force
+```
 nvim $PROFILE 
 在文件中添加
 ```
@@ -45,13 +56,15 @@ yarn install --frozen-lockfile
 yarn build
 
 # nvim-treesitter 这个插件安装的大坑
+```
+npm install -g neovim
 高亮C语言还得安装clangd,我好像是用winget安装的然后用everything搜索添加到环境变量
 TSIntall c 插件
 TSIntall lua
 TSIntall vim
 解决报错 Ts
 
-
+```
 # 插件安装  
 ## Markdown  
 ```
