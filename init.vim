@@ -1,6 +1,6 @@
 " 下载vimplug 如果vimplug不存在
 if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs 
+    silent! curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs 
 			    \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC " 启动nvim时候插件一个一个到安装--sync 然后更新source 使vim配置生效
 endif
@@ -84,7 +84,7 @@ set directory=$HOME/.config/nvim/tmp/backup
 " 启用 Vim 的持久撤销功能，并将撤销文件存储在指定的目录中，以确保在重新打开文件时保留撤销历史
 if has('persistent_undo')
 	set undofile
-	set undodir=$HOME/.config/nvim/tmp/undo,.
+	set undodir=$HOME/.config/nvim/tmp/undo
 endif
 
 
