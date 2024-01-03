@@ -210,11 +210,33 @@ EOF
 
 
 " ==================== vim-instant-markdown ====================
-let g:instant_markdown_slow = 0
-let g:instant_markdown_autostart = 0
-" let g:instant_markdown_open_to_the_world = 1
-" let g:instant_markdown_allow_unsafe_content = 1
-" let g:instant_markdown_allow_external_content = 0
-" let g:instant_markdown_mathjax = 1
-let g:instant_markdown_autoscroll = 1
+"
+let g:instant_markdown_slow = 1               " 预览速度
+let g:instant_markdown_autostart = 0          " 手动启动
+"let g:instant_markdown_open_to_the_world = 0  " 不允许局域网其他设备查看
+"let g:instant_markdown_allow_unsafe_content = 1   " 允许加载不安全内容
+"let g:instant_markdown_allow_external_content = 1 " 控制是否允许加载外部内容（例如通过网络加载的图片等）
+"let g:instant_markdown_mathjax = 1                " 控制是否启用 MathJax 渲染数学公式
+let g:instant_markdown_autoscroll = 1             "  控制是否启用自动滚动
 
+
+" Compile function
+"
+noremap r :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		set splitbelow
+		:sp
+		:res -5
+		term gcc % -o %< && time ./%<
+	elseif &filetype == 'cpp'
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+		:res -15
+		:term ./%<
+	elseif &filetype == 'markdown'
+		exec "InstantMarkdownPreview"
+endif
+endfunc
