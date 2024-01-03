@@ -4,8 +4,8 @@ windowsPythonEnv/
 #忽略MAC的python虚拟环境
 macPythonEnv/
 #忽略所下载的插件加载路径，避免不同系统下冲突
+!autoload/plug.vim
 autoload/
 # 不忽略文件夹下的特定文件
-!autoload/plug.vim
 #忽略tmp
 tmp/
