@@ -38,6 +38,7 @@ win+R打开运行，输入“shell:Common Startup”，将copyQ生成快捷方�
 # 图吧工具箱
 
 # 删除系统假的curl的别名并下载真的
+下载链接  
 `https://curl.se/windows/`
 ```
 Remove-Item -Path Alias:curl -ErrorAction SilentlyContinue
