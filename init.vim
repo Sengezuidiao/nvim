@@ -102,6 +102,7 @@ noremap <LEADER><CR> :nohlsearch<CR>   " 空格回车取消搜索的高亮
 " Find pair
 noremap ,. %
 
+
 " ==================== Insert Mode Cursor Movement ====================
 inoremap <C-a> <ESC>A
 
@@ -112,6 +113,27 @@ noremap <LEADER><Up> <C-w>k
 noremap <LEADER><Down> <C-w>j
 noremap <LEADER><Left> <C-w>h
 noremap <LEADER><Right> <C-w>l
+
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+noremap s<Up> :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap s<Down> :set splitbelow<CR>:split<CR>
+noremap s<Left> :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap s<Right> :set splitright<CR>:vsplit<CR>
+" Resize splits with arrow keys
+noremap w<up> :res +5<CR>
+noremap w<down> :res -5<CR>
+noremap w<left> :vertical resize-5<CR>
+noremap w<right> :vertical resize+5<CR>
+
+" Press <SPACE> + q to close the other window 
+noremap <LEADER>q :only<CR>
+
+
+" ==================== Markdown Settings ====================
+" Snippets
+source $HOME/.config/nvim/vimconfig/md-snippets.vim
+" auto spell
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 """ 模块化配置
 source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
