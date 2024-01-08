@@ -226,7 +226,7 @@ nnoremap <LEADER>g= :Gitsigns next_hunk<CR>    " 移动到下一个 git diff 区
 " ==================== nvim-treesitter ===================="
 "
 lua <<EOF
-    require'nvim-treesitter.install'.compilers = { "clang" }
+    require'nvim-treesitter.install'.compilers = { "clang","gcc" }
 EOF
 
 
