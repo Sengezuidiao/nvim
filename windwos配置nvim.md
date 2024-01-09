@@ -39,7 +39,7 @@ nvim $PROFILE
 在文件中添加
 ```
 New-Alias -Name vim -Value nvim
-```
+r``
 执行配置文件
 .$PROFILE
 
