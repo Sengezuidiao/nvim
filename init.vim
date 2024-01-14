@@ -4,7 +4,7 @@ if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
 			    \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC " 启动nvim时候插件一个一个到安装--sync 然后更新source 使vim配置生效
 endif
-
+let g:nvim_plugins_installation_completed=1
 " Create a _machine_specific.vim file to adjust machine specific stuff, like python interpreter location 
 let has_machine_specific_file = 1
 if empty(glob($HOME.'/.config/nvim/_machine_specific.vim'))
@@ -105,6 +105,8 @@ noremap ,. %
 
 " ==================== Insert Mode Cursor Movement ====================
 inoremap <C-a> <ESC>A
+inoremap <C-Enter> <ESC>o
+inoremap <C-S-Enter> <Esc>O
 
 " ==================== Window management ====================
 " Use <space> + new arrow keys for moving the cursor around windows
@@ -166,8 +168,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ibhagwan/fzf-lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'theniceboy/joshuto.nvim'
-"Plug 'kevinhwang91/rnvimr'   "Rnvimr is a NeoVim plugin that allows you to use Ranger in a floating window,目前没有用ranger.
+if has('mac')
+	Plug 'theniceboy/joshuto.nvim' " MAC下使用的啥joshuto终端文件管理器
+endif
+	"Plug 'kevinhwang91/rnvimr'   "Rnvimr is a NeoVim plugin that allows you to use Ranger in a floating window,目前没有用ranger.
 Plug 'airblade/vim-rooter'
 Plug 'pechorin/any-jump.vim'
 
@@ -179,6 +183,10 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'cohama/agit.vim'
 Plug 'kdheepak/lazygit.nvim'
 
+" Find & Replace
+Plug 'nvim-lua/plenary.nvim' " nvim-spectre dep
+Plug 'nvim-pack/nvim-spectre'
+
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 call plug#end()
@@ -187,6 +195,11 @@ call plug#end()
 " Snippets
 Plug 'theniceboy/vim-snippets'
 
+" ==================== joshuto.nvim ====================
+noremap <silent> R :Joshuto<CR>
+let g:joshuto_floating_window_winblend = 0
+let g:joshuto_floating_window_scaling_factor = 1.0
+let g:joshuto_use_neovim_remote = 1 " for neovim-remote support
 
 " ==================== Dress up my vim ====================
 set termguicolors " enable true colors support
@@ -229,6 +242,124 @@ lua <<EOF
     require'nvim-treesitter.install'.compilers = { "clang","gcc" }
 EOF
 
+
+" ==================== fzf-lua ====================
+" 这里待查看怎么用
+noremap <silent> <C-p> :FzfLua files<CR>
+noremap <silent> <C-f> :Rg<CR>
+noremap <silent> <C-h> :FzfLua oldfiles cwd=~<CR>
+noremap <silent> <C-q> :FzfLua builtin<CR>
+noremap <silent> <C-t> :FzfLua lines<CR>
+" noremap <silent> <C-x> :FzfLua resume<CR>
+noremap <silent> z= :FzfLua spell_suggest<CR>
+noremap <silent> <C-w> :FzfLua buffers<CR>
+noremap <leader>; :History:<CR>
+augroup fzf_commands
+  autocmd!
+  autocmd FileType fzf tnoremap <silent> <buffer> <c-j> <down>
+  autocmd FileType fzf tnoremap <silent> <buffer> <c-k> <up>
+augroup end
+if g:nvim_plugins_installation_completed == 1
+lua <<EOF
+require'fzf-lua'.setup {
+	global_resume = true,
+	global_resume_query = true,
+	winopts = {
+		height = 0.95,
+		width = 0.95,
+		preview = {
+			scrollbar = 'float',
+		},
+		fullscreen = false,
+		vertical       = 'down:45%',      -- up|down:size
+		horizontal     = 'right:60%',     -- right|left:size
+		hidden         = 'nohidden',
+	},
+	keymap = {
+		-- These override the default tables completely
+		-- no need to set to `false` to disable a bind
+		-- delete or modify is sufficient
+		builtin = {
+			["<c-f>"]      = "toggle-fullscreen",
+			["<c-r>"]      = "toggle-preview-wrap",
+			["<c-p>"]      = "toggle-preview",
+			["<c-y>"]      = "preview-page-down",
+			["<c-l>"]      = "preview-page-up",
+			["<S-left>"]   = "preview-page-reset",
+		},
+		fzf = {
+			["esc"]        = "abort",
+			["ctrl-h"]     = "unix-line-discard",
+			["ctrl-k"]     = "half-page-down",
+			["ctrl-b"]     = "half-page-up",
+			["ctrl-n"]     = "beginning-of-line",
+			["ctrl-a"]     = "end-of-line",
+			["alt-a"]      = "toggle-all",
+			["f3"]         = "toggle-preview-wrap",
+			["f4"]         = "toggle-preview",
+			["shift-down"] = "preview-page-down",
+			["shift-up"]   = "preview-page-up",
+			["ctrl-e"]     = "down",
+			["ctrl-u"]     = "up",
+		},
+	},
+  previewers = {
+    cat = {
+      cmd             = "cat",
+      args            = "--number",
+    },
+    bat = {
+      cmd             = "bat",
+      args            = "--style=numbers,changes --color always",
+      theme           = 'Coldark-Dark', -- bat preview theme (bat --list-themes)
+      config          = nil,            -- nil uses $BAT_CONFIG_PATH
+    },
+    head = {
+      cmd             = "head",
+      args            = nil,
+    },
+    git_diff = {
+      cmd_deleted     = "git diff --color HEAD --",
+      cmd_modified    = "git diff --color HEAD",
+      cmd_untracked   = "git diff --color --no-index /dev/null",
+      -- pager        = "delta",      -- if you have `delta` installed
+    },
+    man = {
+      cmd             = "man -c %s | col -bx",
+    },
+    builtin = {
+      syntax          = true,         -- preview syntax highlight?
+      syntax_limit_l  = 0,            -- syntax limit (lines), 0=nolimit
+      syntax_limit_b  = 1024*1024,    -- syntax limit (bytes), 0=nolimit
+    },
+  },
+  files = {
+    -- previewer      = "bat",          -- uncomment to override previewer
+                                        -- (name from 'previewers' table)
+                                        -- set to 'false' to disable
+    prompt            = 'Files❯ ',
+    multiprocess      = true,           -- run command in a separate process
+    git_icons         = true,           -- show git icons?
+    file_icons        = true,           -- show file icons?
+    color_icons       = true,           -- colorize file|git icons
+    -- executed command priority is 'cmd' (if exists)
+    -- otherwise auto-detect prioritizes `fd`:`rg`:`find`
+    -- default options are controlled by 'fd|rg|find|_opts'
+    -- NOTE: 'find -printf' requires GNU find
+    -- cmd            = "find . -type f -printf '%P\n'",
+    find_opts         = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
+    rg_opts           = "--color=never --files --hidden --follow -g '!.git'",
+    fd_opts           = "--color=never --type f --hidden --follow --exclude .git",
+  },
+  buffers = {
+    prompt            = 'Buffers❯ ',
+    file_icons        = true,         -- show file icons?
+    color_icons       = true,         -- colorize file|git icons
+    sort_lastused     = true,         -- sort buffers() by last used
+  },
+}
+EOF
+endif
 
 " ==================== markdown-Preview ====================
 
