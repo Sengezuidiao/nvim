@@ -6,9 +6,13 @@ windwows和MAC统一使用的是`copyQ` 主要是开源免费不要钱,这点就
 [设置开机自启动](https://support.apple.com/zh-cn/guide/mac-help/mh15189/mac) 
 # yabai
 
-
 # 终端文件管理器
 joshuto 
 
+# 包管理器homebrew
 
 
+# nerdfont 字体
+好用的字体库  
+`git clone --depth=1 https://github.com/ryanoasis/nerd-fonts.git`
+`使用CodeNewRoman Nerd Font`
