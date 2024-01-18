@@ -142,9 +142,8 @@ source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
 
 " ==================== Install Plugins with Vim-Plug ====================
 call plug#begin('$HOME/.config/nvim/autoload')
-Plug 'itchyny/vim-cursorword'   "动态高亮当前光标下的单词
-" Treesitter  语法高亮相关，暂时不知道有啥用
-"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'itchyny/vim-cursorword'   " Underlines the word under the cursor
+" Treesitter  语法解析高亮
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 " Pretty Dress 高亮配置

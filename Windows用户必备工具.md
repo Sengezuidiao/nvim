@@ -22,19 +22,7 @@ Remove-Item -Path Alias:curl -ErrorAction SilentlyContinue
 ```
 
 
-# 安全软件  
-火绒安全  
-
-
-# 图吧工具箱
-
-# 删除系统假的curl的别名并下载真的
-下载链接  
-`https://curl.se/windows/`
-```
-Remove-Item -Path Alias:curl -ErrorAction SilentlyContinue
-```
-[百度](https://www.baidu.com) 
+# windows Terminal 美化  
 
 
 
