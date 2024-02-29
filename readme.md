@@ -12,3 +12,9 @@
 └── vimconfig
     └── look.vim
 ```
+
+# 使用说明  
+## Plugins Keybindings  
+## AutoCompletion
+[COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)  
+
