@@ -31,6 +31,7 @@ The virtual env used here is Python.
     └── look.vim
 ```
 
+<<<<<<< HEAD
 # Keyboard Shortcuts
 ## Basic Editor Feature
 ### The Most Basics
@@ -42,3 +43,10 @@ The virtual env used here is Python.
 ### coc(AutoCompletion)
 
 <++>
+=======
+# 使用说明  
+## Plugins Keybindings  
+## AutoCompletion
+[COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)  
+
+>>>>>>> 9ad7ab72a91309321c74a7684c3d5ea9742dbba3
