@@ -194,6 +194,10 @@ call plug#end()
 " Snippets
 Plug 'theniceboy/vim-snippets'
 
+" Vim Applications
+Plug 'itchyny/calendar.vim'
+
+
 " ==================== joshuto.nvim ====================
 noremap <silent> R :Joshuto<CR>
 let g:joshuto_floating_window_winblend = 0
@@ -204,6 +208,31 @@ let g:joshuto_use_neovim_remote = 1 " for neovim-remote support
 set termguicolors " enable true colors support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 silent! color deus
+
+" ==================== vim-calendar ====================
+"noremap \c :Calendar -position=here<CR>
+noremap \\ :Calendar -view=clock -position=here<CR>
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+augroup calendar-mappings
+	autocmd!
+	" diamond cursor
+	autocmd FileType calendar nmap <buffer> u <Plug>(calendar_up)
+	autocmd FileType calendar nmap <buffer> n <Plug>(calendar_left)
+	autocmd FileType calendar nmap <buffer> e <Plug>(calendar_down)
+	autocmd FileType calendar nmap <buffer> i <Plug>(calendar_right)
+	autocmd FileType calendar nmap <buffer> <c-u> <Plug>(calendar_move_up)
+	autocmd FileType calendar nmap <buffer> <c-n> <Plug>(calendar_move_left)
+	autocmd FileType calendar nmap <buffer> <c-e> <Plug>(calendar_move_down)
+	autocmd FileType calendar nmap <buffer> <c-i> <Plug>(calendar_move_right)
+	autocmd FileType calendar nmap <buffer> k <Plug>(calendar_start_insert)
+	autocmd FileType calendar nmap <buffer> K <Plug>(calendar_start_insert_head)
+	" unmap <C-n>, <C-p> for other plugins
+	autocmd FileType calendar nunmap <buffer> <C-n>
+	autocmd FileType calendar nunmap <buffer> <C-p>
+augroup END
+
+
 
 hi NonText ctermfg=gray guifg=grey10
 "hi SpecialKey ctermfg=blue guifg=grey70
