@@ -6,7 +6,7 @@ windwows和MAC统一使用的是`copyQ` 主要是开源免费不要钱,这点就
 [设置开机自启动](https://support.apple.com/zh-cn/guide/mac-help/mh15189/mac) 
 # yabai
 
-# 终端文件管理器
+# 终端文件管理器(已放弃，太难了)
 joshuto 
 
 # 包管理器homebrew
