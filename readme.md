@@ -5,9 +5,16 @@
 ## First of all 
 * Do `:check health`
 ## Config `Python` Path  
+
+### MACOS
 The virtual env used here is Python.  
-`let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'
-`
+`let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'`
+
+### Linux
+
+
+The virtual env used here is Python.  
+`let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'`
 ## And also...
 * install `figlet` for input text ASCII art
   * `brew install figlet`
@@ -31,7 +38,6 @@ The virtual env used here is Python.
     └── look.vim
 ```
 
-<<<<<<< HEAD
 # Keyboard Shortcuts
 ## Basic Editor Feature
 ### The Most Basics
@@ -42,11 +48,8 @@ The virtual env used here is Python.
 ## AutoCompletion
 ### coc(AutoCompletion)
 
-<++>
-=======
 # 使用说明  
 ## Plugins Keybindings  
 ## AutoCompletion
 [COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)  
 
->>>>>>> 9ad7ab72a91309321c74a7684c3d5ea9742dbba3
