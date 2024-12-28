@@ -140,6 +140,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 """ 模块化配置
 source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
 
+""" 加载插件模块
+source ~/.config/nvim/vimconfig/plugins.vim
 
 
 " ==================== Install Plugins with Vim-Plug ====================
