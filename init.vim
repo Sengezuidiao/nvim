@@ -145,7 +145,7 @@ source ~/.config/nvim/vimconfig/look.vim  " 分文件配置，外观相关
 " ==================== Install Plugins with Vim-Plug ====================
 call plug#begin('$HOME/.config/nvim/autoload')
 Plug 'itchyny/vim-cursorword'   " Underlines the word under the cursor
-" Treesitter  语法解析高亮
+" Treesitter  语法解析高亮,代码高亮
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 " Pretty Dress 高亮配置
