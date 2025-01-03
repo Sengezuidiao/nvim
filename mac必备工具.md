@@ -8,6 +8,10 @@ windwows和MAC统一使用的是`copyQ` 主要是开源免费不要钱,这点就
 
 # 终端文件管理器(已放弃，太难了)
 joshuto 
+yazi 可以了解一下
+
+# 效率提高工具
+OCR表格识别
 
 # 包管理器homebrew
 
@@ -16,3 +20,10 @@ joshuto
 好用的字体库  
 `git clone --depth=1 https://github.com/ryanoasis/nerd-fonts.git`
 `使用CodeNewRoman Nerd Font`
+
+
+# 终端软件iterm2
+配置教程：
+1、安装`oh my zsh`,百度搜索即可
+2、配置`~.zshrc`
+

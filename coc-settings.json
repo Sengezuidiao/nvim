@@ -69,24 +69,7 @@
 		"$HOME/.config/nvim/Ultisnips/",
 		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
 	],
-	"coc.preferences.formatOnSaveFiletypes": [
-		"javascript",
-		"typescript",
-		"typescriptreact",
-		"html",
-		"css",
-		"json",
-		"jsonc",
-		"java",
-		"python",
-		"vue",
-		"svelte",
-		"cs",
-		"racket",
-		"prisma",
-		"dart",
-		"terraform"
-	],
+	"coc.preferences.formatOnSaveFiletypes": ["javascript", "html", "css", "json", "jsonc", "python"],
 	"yaml.format.enable": true,
 	"signature.target": "float",
 	"yank.enableCompletion": false,
@@ -155,13 +138,6 @@
 		"<<": "gitStage",
 		">>": "gitUnstage"
 	},
-	"flutter.outlineWidth": 40,
-	"flutter.outlineIconPadding": 0,
-	"flutter.UIPath": true,
-	"flutter.openDevLogSplitCommand": "botright 12split",
-	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
-	"flutter.trace.server": "off",
-	"dart.lineLength": 100,
 	"tslint.autoFixOnSave": false,
 	"python.autoComplete.addBrackets": true,
 	"python.jediEnabled": false,
@@ -201,44 +177,11 @@
 		"eelixir": "mix_format"
 	},
 	"languageserver": {
-		"lua": {
-			"command": "lua-lsp",
-			"filetypes": ["lua"]
-		},
-		"swift": {
-			"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
-			"args": [],
-			"filetypes": ["swift"],
-			"initializationOptions": {},
-			"settings": {}
-		},
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
-			"initializationOptions": {
-				"gocodeCompletionEnabled": true,
-				"diagnosticsEnabled": true,
-				"lintTool": "golint"
-			}
-		},
 		"bash": {
 			"command": "bash-language-server",
 			"args": ["start"],
 			"filetypes": ["sh"],
 			"ignoredRootPaths": []
-		},
-		"racket": {
-			"command": "racket",
-			"args": ["--lib", "racket-langserver"],
-			"filetypes": ["scheme", "racket"]
-		},
-		"terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": ["terraform", "tf"],
-			"initializationOptions": {},
-			"settings": {}
 		},
 		"ccls": {
 			"command": "ccls",
