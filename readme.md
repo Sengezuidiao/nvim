@@ -65,3 +65,10 @@ coc-json for json.
 coc-lists provides some basic lists like fzf.vim.
 coc-prisma for Prisma schema integration.
 coc-yaml for yaml
+# 插件使用说明  
+`itchyny/vim-cursorword` 光标下的单词添加下划线显示，文件内有的都添加  
+* 代码高亮nvim-treesitter  
+`nvim-treesitter/nvim-treesitter`  
+
+
+
