@@ -7,8 +7,8 @@ windwows和MAC统一使用的是`copyQ` 主要是开源免费不要钱,这点就
 # yabai
 
 # 终端文件管理器(已放弃，太难了)
-joshuto 
-yazi 可以了解一下
+yazi 
+https://yazi-rs.github.io/docs/installation
 
 # 效率提高工具
 OCR表格识别
