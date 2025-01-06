@@ -210,7 +210,6 @@ let g:joshuto_use_neovim_remote = 1 " for neovim-remote support
 set termguicolors " enable true colors support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 silent! color deus
-
 " ==================== vim-calendar ====================
 "noremap \c :Calendar -position=here<CR>
 noremap \\ :Calendar -view=clock -position=here<CR>
@@ -246,23 +245,23 @@ source ~/.config/nvim/vimconfig/cocconfig.vim  " 分文件配置coc相关
 " ==================== eleline.vim ====================
 let g:airline_powerline_fonts = 0
 " ==================== gitsigns.nvim ====================
-lua <<EOF
-require('gitsigns').setup({
-	signs = {
-    add          = { hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-    change       = { hl = 'GitSignsChange', text = '░', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-    delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-    topdelete    = { hl = 'GitSignsDelete', text = '▔', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-    changedelete = { hl = 'GitSignsChange', text = '▒', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-  },
-})
-EOF
-nnoremap H :Gitsigns preview_hunk_inline<CR> "当光标位于某一行上时，按下 H 键，将显示当前行的 git diff
-nnoremap <LEADER>gr :Gitsigns reset_hunk<CR> "当光标位于某一行上时，按下 <Leader>gr 键，将重置当前行的 git diff
-nnoremap <LEADER>gb :Gitsigns blame_line<CR> "当光标位于某一行上时，按下 <Leader>gb 键，将显示当前行的 git blame 信息
-nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>   " 将移动到上一个 git diff 区域
-nnoremap <LEADER>g= :Gitsigns next_hunk<CR>    " 移动到下一个 git diff 区域
+" lua <<EOF
+" require('gitsigns').setup({
+" 	signs = {
+"     add          = { hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+"     change       = { hl = 'GitSignsChange', text = '░', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+"     delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+"     topdelete    = { hl = 'GitSignsDelete', text = '▔', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+"     changedelete = { hl = 'GitSignsChange', text = '▒', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+"     untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+"   },
+" })
+" EOF
+" nnoremap H :Gitsigns preview_hunk_inline<CR> "当光标位于某一行上时，按下 H 键，将显示当前行的 git diff
+" nnoremap <LEADER>gr :Gitsigns reset_hunk<CR> "当光标位于某一行上时，按下 <Leader>gr 键，将重置当前行的 git diff
+" nnoremap <LEADER>gb :Gitsigns blame_line<CR> "当光标位于某一行上时，按下 <Leader>gb 键，将显示当前行的 git blame 信息
+" nnoremap <LEADER>g- :Gitsigns prev_hunk<CR>   " 将移动到上一个 git diff 区域
+" nnoremap <LEADER>g= :Gitsigns next_hunk<CR>    " 移动到下一个 git diff 区域
 
 
 

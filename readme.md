@@ -61,6 +61,18 @@ The virtual env used here is Python.
 ## AutoCompletion
 [COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)  
 
+
+# coc插件管理(https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+coc-yank provides yank highlights & history.
+coc-css for css, scss and less.
+coc-clangd for C/C++/Objective-C, use clangd
+coc-explorer File Explorer extension
+coc-html for html, handlebars and razor.
+coc-docker for dockerfile.
+coc-json for json.
+coc-lists provides some basic lists like fzf.vim.
+coc-prisma for Prisma schema integration.
+coc-yaml for yaml
 # 插件使用说明  
 `itchyny/vim-cursorword` 光标下的单词添加下划线显示，文件内有的都添加  
 * 代码高亮nvim-treesitter  
