@@ -23,10 +23,13 @@ The virtual env used here is Python.
 
 改用nvim，打算将自己的macbook以及自己最常用到笔记本电脑到nvim配置都统一，打造一个自己最熟悉到编辑环境
 
-# 
+# 项目文件夹说明
+
+插件管理器：vim-plug
+
 ```
 
-├── autoload
+├── autoload 
 │   └── plug.vim
 ├── init.vim
 ├── readme.md
@@ -38,7 +41,12 @@ The virtual env used here is Python.
     └── look.vim
 ```
 
+# 所有插件的作用
+
+
+
 # Keyboard Shortcuts
+
 ## Basic Editor Feature
 ### The Most Basics
 ``
