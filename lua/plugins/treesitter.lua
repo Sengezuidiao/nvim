@@ -1,12 +1,15 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate", -- 自动更新 Treesitter 语言文件
-  event = { "BufReadPost", "BufNewFile" }, -- 按需加载，提高启动速度
+  -- event = { "BufReadPost", "BufNewFile" }, -- 按需加载，提高启动速度
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects", -- 可选依赖，根据需要添加
     "p00f/nvim-ts-rainbow", -- 彩虹括号支持
   },
   config = function()
+    require 'nvim-treesitter.install'.prefer_git = false
+    -- 指定编译器
+    require 'nvim-treesitter.install'.compilers = { "clang", "gcc" },
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "vim",
