@@ -13,8 +13,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹
-opt.wrap = false
-
+opt.wrap = true
 -- 光标行
 opt.cursorline = true
 
@@ -39,14 +38,11 @@ opt.signcolumn = "yes"
 
 -- 光标位置还原到上次关闭文件时的位置
 vim.api.nvim_create_autocmd("BufReadPost", {
-    pattern = "*",
-    callback = function()
-        local last_position = vim.fn.line("'\"")
-        if last_position > 1 and last_position <= vim.fn.line("$") then
-            vim.api.nvim_command("normal! g'\"")
-        end
-    end,
+  pattern = "*",
+  callback = function()
+    local last_position = vim.fn.line("'\"")
+    if last_position > 1 and last_position <= vim.fn.line("$") then
+      vim.api.nvim_command("normal! g'\"")
+    end
+  end,
 })
-
-
-
