@@ -1,4 +1,5 @@
-#python虚拟环境
-pynvim/
-#忽略tmp
 tmp/
+lazy/
+lazy-lock.json
+# 忽略python虚拟环境
+pynvim/

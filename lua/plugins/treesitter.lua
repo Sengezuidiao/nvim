@@ -7,6 +7,9 @@ return {
     "p00f/nvim-ts-rainbow", -- 彩虹括号支持
   },
   config = function()
+    require 'nvim-treesitter.install'.prefer_git = false
+    -- 指定编译器
+    require 'nvim-treesitter.install'.compilers = { "gcc", "clang" },
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "vim",
