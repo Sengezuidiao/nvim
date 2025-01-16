@@ -9,13 +9,12 @@ return {
   config = function()
     require 'nvim-treesitter.install'.prefer_git = false
     -- 指定编译器
-    require 'nvim-treesitter.install'.compilers = { "gcc", "clang" },
+    require 'nvim-treesitter.install'.compilers = { "calng", "gcc" },
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "vim",
         "bash",
         "c",
-        "cpp",
         "javascript",
         "json",
         "lua",

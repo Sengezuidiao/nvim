@@ -2,6 +2,7 @@ local opt = vim.opt
 
 -- disabling the Perl provider
 vim.g.loaded_perl_provider = 0
+
 -- 行号
 -- opt.relativenumber = true
 opt.number = true
