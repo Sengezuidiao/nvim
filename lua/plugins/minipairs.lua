@@ -2,6 +2,7 @@ return {
   {
     "echasnovski/mini.pairs",
     event = "VeryLazy", -- 设置为 VeryLazy 事件触发加载插件
+    enabled = false,
     opts = {
       -- 定义插件的行为模式
       modes = { insert = true, command = true, terminal = false },

@@ -13,13 +13,18 @@
 
 ## 主要用途：编程
 
+必备功能：
+
 - 代码补全，通过语言服务器实现
+  nvim-treesitter,这个在Windows下面各种报错，很奇怪,除了这个目前也没见到更好的。
 - 语法高亮
 - 底栏
+
+  - 插件：
+
 - 顶栏
 - 文件树
 - 快速注释
--
 
 # NeoVim 个人使用的一个哲学思想
 
@@ -28,7 +33,9 @@
 1. 参考软件操作，高频操作使用快捷键提高效率，我认为 vim 也是一样，通过按键映射，把操作捷径化
 2. 基于终端的工作流模式，减少分裂感，当然，日常工作中，我自己横跨 Windows、macos 使用很割裂，感觉 windows 各种上古遗物和臃肿，没有 mac 的简洁美，但是又离不开
 3. 折腾的乐趣
-4.
+4. 为什么 no 发行版，体验玩 lazyvim 后，感觉有点过度臃肿，进而学习自己去自定义配置
+
+## 安装过程
 
 # After Installation You Need To
 
@@ -48,7 +55,7 @@ The virtual env used here is Python.
 The virtual env used here is Python.  
 `let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'`
 
-## And also...
+## And also
 
 - install `figlet` for input text ASCII art
   - `brew install figlet`
@@ -100,6 +107,7 @@ The virtual env used here is Python.
 [COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)
 
 # coc 插件管理
+
 [extensions](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
 
 coc-yank provides yank highlights & history.
@@ -157,3 +165,24 @@ $env:LOCALAPPDATA\nvim\nvim\site\pack
 在用户变量或系统变量中添加或修改 `XDG_CONFIG_HOME` 为你希望的目录。
 
 # 快捷键
+
+## 自动补全（COC 插件）
+
+| 快捷键          | 作用                                                          | 模式 |
+| --------------- | ------------------------------------------------------------- | ---- |
+| `Space` `y`     |                                                               |      |
+| `g` `d`         | Go define,跳转到定义出，配合`Ctrl` `o`， `Ctrl` `i`可以来回跳 | `n`  |
+| `g` `r`         |                                                               |      |
+| `g` `i`         |                                                               |      |
+| `Space` `r` `n` | 变量重命名                                                    | `n`  |
+| `Ctrl` `j`      | 跳转到下一个参数（占位符）                                    | `i`  |
+|                 |                                                               |      |
+
+## 左侧文件浏览器（nvim-tree）
+
+| 快捷键  | 作用           | 模式 |
+| ------- | -------------- | ---- |
+| `t` `t` | 打开左侧文件树 | `n`  |
+| `q`     | 退出文件树     | `n`  |
+|         |                |      |
+
