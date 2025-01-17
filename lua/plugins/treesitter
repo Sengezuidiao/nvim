@@ -24,11 +24,15 @@ return {
   },
   opts = {
     -- 指定编译器
+<<<<<<< HEAD:lua/plugins/treesitter.lua
+=======
+    require 'nvim-treesitter.install'.compilers = { "calng", "gcc" },
+    require("nvim-treesitter.configs").setup({
+>>>>>>> 570712959bf4cfd8d48234664108eb3dc4ec09fc:lua/plugins/treesitter
       ensure_installed = {
         "vim",
         "bash",
         "c",
-        "cpp",
         "javascript",
         "json",
         "lua",
