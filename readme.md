@@ -16,8 +16,10 @@
 必备功能：
 
 - 代码补全，通过语言服务器实现
-  nvim-treesitter,这个在Windows下面各种报错，很奇怪,除了这个目前也没见到更好的。
 - 语法高亮
+  nvim-treesitter,这个在Windows下面各种报错，很奇怪,除了这个目前也没见到更好的。
+  nvim-treesitter config in windows:
+
 - 底栏
 
   - 插件：
@@ -25,6 +27,8 @@
 - 顶栏
 - 文件树
 - 快速注释
+- 快捷键记忆，相当于很多软件的？
+
 
 # NeoVim 个人使用的一个哲学思想
 
@@ -185,4 +189,8 @@ $env:LOCALAPPDATA\nvim\nvim\site\pack
 | `t` `t` | 打开左侧文件树 | `n`  |
 | `q`     | 退出文件树     | `n`  |
 |         |                |      |
+
+快速注释，取消注释(numToStr/Comment.nvim)
+gcc 注释单行，取消单行注释
+gc 注释选中行，取消选中行注释
 
