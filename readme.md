@@ -29,7 +29,6 @@
 - 快速注释
 - 快捷键记忆，相当于很多软件的？
 
-
 # NeoVim 个人使用的一个哲学思想
 
 ## 为什么需要使用 vim
@@ -193,4 +192,10 @@ $env:LOCALAPPDATA\nvim\nvim\site\pack
 快速注释，取消注释(numToStr/Comment.nvim)
 gcc 注释单行，取消单行注释
 gc 注释选中行，取消选中行注释
+
+## MarkDown
+
+| 快捷键                 | 作用              | 模式 |
+| `<leader>` `m` `t` `s` | MarkDown 表格排序 | `n`  |
+| `<leader>` `t` `r`     | MarkDown 表格对齐 | `n`  |
 
