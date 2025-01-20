@@ -5,5 +5,9 @@
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     }
+  },
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
   }
 }

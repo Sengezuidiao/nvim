@@ -14,7 +14,7 @@ keymap.set("n", "<leader>q", "<C-w>q>")
 keymap.set("n", "<leader>w", ":w<CR>")
 
 -- coc-translator
-keymap.set("n", "<Leader>t", "<Plug>(coc-translator-p)")
+keymap.set("n", "ts", "<Plug>(coc-translator-p)")
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 keymap.set("n", "tt", ":NvimTreeToggle<CR>")
