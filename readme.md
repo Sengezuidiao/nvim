@@ -195,7 +195,20 @@ gc 注释选中行，取消选中行注释
 
 ## MarkDown
 
-| 快捷键                 | 作用              | 模式 |
-| `<leader>` `m` `t` `s` | MarkDown 表格排序 | `n`  |
-| `<leader>` `t` `r`     | MarkDown 表格对齐 | `n`  |
-
+| Shortcut             | What it creates       | mode |
+| -------------------- | --------------------- | ---  |
+| `,n`                 | ---                   | `n`  |
+| `,b`                 | **Bold** text         | `n`  |
+| `,s`                 | ~~sliced~~ text       | `n`  |
+| `,i`                 | *italic* text         | `n`  |
+| `,d`                 | `code block`          | `n`  |
+| `,c`                 | big `block of code`   | `n`  |
+| `,m`                 | - [ ] check mark      | `n`  |
+| `,p`                 | picture               | `n`  |
+| `,a`                 | [link]()              | `n`  |
+| `,1`                 | # H1                  | `n`  |
+| `,2`                 | ## H2                 | `n`  |
+| `,3`                 | ### H3                | `n`  |
+| `,4`                 | #### H4               | `n`  |
+| `<leader>` `t` `s`   | MarkDown 表格排序     | `n`  |
+| `<leader>` `t` `r`   | MarkDown 表格对齐     | `n`  |

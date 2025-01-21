@@ -1,4 +1,5 @@
 {
+  "stylua.styluaPath": "/opt/homebrew/bin/stylua",
   "languageserver": {
     "clangd": {
       "command": "clangd",

@@ -1,3 +1,9 @@
+# 包管理器homebrew
+
+新电脑的第一步就是包管理器，便于进行自己的软件清单管理。
+`brew list` 查看已经安装的软件，其中`Formulae` 是常规命令行程序，`Casks`为图形化程序。
+安装命令行应用程序，`brew install 包名`，不太确定完整包名可以用`brew searce 可能包名`,安装图形化程序`brew --cask install 包名`
+
 # 快捷键统一软件
 
   Karabiner  发现好像没什么卵用啊  
@@ -17,8 +23,6 @@ yazi
 # 效率提高工具
 
 OCR表格识别
-
-# 包管理器homebrew
 
 # nerdfont 字体
 
