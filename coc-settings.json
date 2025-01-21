@@ -26,5 +26,8 @@
   "markdownlint.config": {
     "default": true,
     "line_length": false
-  }
+  },
+  "snippets.ultisnips.directories": [
+    "$HOME/.config/nvim/Ultisnips/"
+  ]
 }
