@@ -212,3 +212,6 @@ gc 注释选中行，取消选中行注释
 | `,4`                 | #### H4               | `n`  |
 | `<leader>` `t` `s`   | MarkDown 表格排序     | `n`  |
 | `<leader>` `t` `r`   | MarkDown 表格对齐     | `n`  |
+| `<leader>` `t` `m`   | 打开表格模式          | `n`  |
+| `leader` `p`         | 粘贴剪切板的图片      | `n`  |
+
