@@ -19,3 +19,5 @@ keymap.set("n", "ts", "<Plug>(coc-translator-p)")
 -- nvim-tree
 keymap.set("n", "tt", ":NvimTreeToggle<CR>")
 
+-- markdownpreviw
+keymap.set("n", "<leader>mr", ":MarkdownPreview<CR>")
