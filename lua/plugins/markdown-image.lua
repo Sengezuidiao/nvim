@@ -6,7 +6,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " there are some defaults for image directory and image name, you can change them
 let g:mdip_imgdir = './assets'
 let g:mdip_imgname = 'image'
-let g:mdip_imgdir_
+let g:mdip_imgdir_intext = './assets'
   ]])
 	end,
 }
