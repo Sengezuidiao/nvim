@@ -19,5 +19,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("i", ",3", "###<Space><Enter><++><Esc>kA", { buffer = true })
 		vim.keymap.set("i", ",4", "####<Space><Enter><++><Esc>kA", { buffer = true })
 		vim.keymap.set("i", ",l", "--------<Enter>", { buffer = true })
+		vim.keymap.set("i", ",x", "- [<++>] <++>", { buffer = true })
 	end,
 })
