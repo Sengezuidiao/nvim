@@ -5,7 +5,8 @@
       "rootPatterns": [
         "compile_flags.txt",
         "compile_commands.json",
-        "build"
+        "build",
+        "main.c"
       ],
       "filetypes": [
         "c",
@@ -29,5 +30,16 @@
   },
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/Ultisnips/"
-  ]
+  ],
+  "coc-qml": {
+    "enabled": true,
+    "qmlformatPath": "qmlformat",
+    "qmlformatArgs": [
+      "--indent-width",
+      "2",
+      "-i"
+    ],
+    "qmllsPath": "qmlls",
+    "qmllsArgs": []
+  }
 }
