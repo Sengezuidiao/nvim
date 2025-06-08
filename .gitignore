@@ -3,3 +3,5 @@ lazy/
 lazy-lock.json
 # 忽略python虚拟环境
 pynvim/
+python/
+
