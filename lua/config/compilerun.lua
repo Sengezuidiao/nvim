@@ -1,7 +1,6 @@
 function compile_and_run()
 	-- 保存当前文件
 	vim.cmd("write")
-
 	-- 获取当前文件类型
 	local filetype = vim.bo.filetype
 	local filename = vim.fn.expand("%")

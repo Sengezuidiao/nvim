@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- 取消高亮
