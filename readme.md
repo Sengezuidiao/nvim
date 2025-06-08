@@ -46,17 +46,11 @@
 
 - Do `:check health`
 
-## Config `Python` Path
+## `Python` 虚拟环境设置
 
 ### MACOS
-
 The virtual env used here is Python.  
-`let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'`
-
-### Linux
-
-The virtual env used here is Python.  
-`let g:python3_host_prog=$HOME.'/.config/nvim/macPythonEnv/macPythonEnv/bin/python'`
+`let g:python3_host_prog=$HOME.'/.config/nvim/python/bin/python'`
 
 ## And also
 
@@ -216,13 +210,13 @@ gc 注释选中行，取消选中行注释
 | `leader` `p`         | 粘贴剪切板的图片      | `n`  |
 
 # TODO
+
 文件内容搜索
 
 # C++开发
-通过CMAKE生成补全文件
-cd build
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+
+通过CMAKE生成补全文件  
+cd build  
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..  
 mv compile_commands.json ../
-
-
 
