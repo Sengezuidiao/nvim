@@ -5,3 +5,5 @@ lazy-lock.json
 pynvim/
 python/
 
+# 删除系统自动生成的文件
+.DS_Store
