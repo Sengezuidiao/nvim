@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
-		vim.keymap.set("n", "<leader>w", "yiWi[<esc>Ea](<esc>pa", { buffer = true })
+		-- vim.keymap.set("n", "<leader>w", "yiWi[<esc>Ea](<esc>pa", { buffer = true })
 		vim.keymap.set("i", ",f", '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', { buffer = true })
 		vim.keymap.set("i", "<C-e>", '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', { buffer = true })
 		vim.keymap.set("i", ",w", '<Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>', { buffer = true })
@@ -19,5 +19,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("i", ",3", "###<Space><Enter><++><Esc>kA", { buffer = true })
 		vim.keymap.set("i", ",4", "####<Space><Enter><++><Esc>kA", { buffer = true })
 		vim.keymap.set("i", ",l", "--------<Enter>", { buffer = true })
+		vim.keymap.set("i", ",x", "- [<++>] <++>", { buffer = true })
 	end,
 })

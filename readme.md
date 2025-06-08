@@ -215,3 +215,14 @@ gc 注释选中行，取消选中行注释
 | `<leader>` `t` `m`   | 打开表格模式          | `n`  |
 | `leader` `p`         | 粘贴剪切板的图片      | `n`  |
 
+# TODO
+文件内容搜索
+
+# C++开发
+通过CMAKE生成补全文件
+cd build
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+mv compile_commands.json ../
+
+
+

@@ -4,6 +4,13 @@ local keymap = vim.keymap
 -- 取消高亮
 keymap.set("n", "<leader><CR>", ":nohl<CR>")
 
+-- 格式化
+keymap.set("n", "<leader>/", ":Format<CR>")
+
+-- 命令模式快捷键
+keymap.set("i", "<C-a>", "<Esc>0i")
+keymap.set("i", "<C-e>", "<Esc>A")
+
 -- 窗口管理
 keymap.set("n", "<leader><Left>", "<C-w>h")
 keymap.set("n", "<leader><Right>", "<C-w>l")
@@ -11,7 +18,8 @@ keymap.set("n", "<leader><Up>", "<C-w>k")
 keymap.set("n", "<leader><Down>", "<C-w>j")
 keymap.set("n", "<leader>q", "<C-w>q>")
 keymap.set("n", "<leader>w", ":w<CR>")
-
+vim.keymap.set("n", "<leader>+", ":vertical resize +5<CR>")
+vim.keymap.set("n", "<leader>-", ":vertical resize -5<CR>")
 -- coc-translator
 keymap.set("n", "ts", "<Plug>(coc-translator-p)")
 -- ---------- 插件 ---------- ---
