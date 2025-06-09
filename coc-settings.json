@@ -31,15 +31,9 @@
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/Ultisnips/"
   ],
-  "coc-qml": {
-    "enabled": true,
-    "qmlformatPath": "qmlformat",
-    "qmlformatArgs": [
-      "--indent-width",
+  "coc-qml.qmlformatArgs": [
+      "-w",
       "2",
       "-i"
-    ],
-    "qmllsPath": "qmlls",
-    "qmllsArgs": []
-  }
+    ]
 }

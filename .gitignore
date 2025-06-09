@@ -4,6 +4,6 @@ lazy-lock.json
 # 忽略python虚拟环境
 pynvim/
 python/
-
+tmp/
 # 删除系统自动生成的文件
 .DS_Store

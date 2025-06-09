@@ -236,3 +236,17 @@ keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
+-- 创建备份和撤销目录（如果不存在）
+vim.fn.mkdir(vim.fn.stdpath("config") .. "/tmp/backup", "p")
+vim.fn.mkdir(vim.fn.stdpath("config") .. "/tmp/undo", "p")
+-- vim.fn.mkdir(vim.fn.stdpath("config") .. "/tmp/sessions", "p") -- 可选
+
+-- 设置备份相关路径
+vim.opt.backupdir = vim.fn.stdpath("config") .. "/tmp/backup"
+vim.opt.directory = vim.fn.stdpath("config") .. "/tmp/backup" -- swap 文件的路径
+
+-- 启用持久撤销功能
+if vim.fn.has("persistent_undo") == 1 then
+  vim.opt.undofile = true
+  vim.opt.undodir = vim.fn.stdpath("config") .. "/tmp/undo"
+end
