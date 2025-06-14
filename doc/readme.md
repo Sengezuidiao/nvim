@@ -49,6 +49,7 @@
 ## `Python` 虚拟环境设置
 
 ### MACOS
+
 The virtual env used here is Python.  
 `let g:python3_host_prog=$HOME.'/.config/nvim/python/bin/python'`
 
@@ -63,43 +64,13 @@ The virtual env used here is Python.
 
 # 项目文件夹说明
 
-插件管理器：vim-plug
-
-```
-
-├── autoload
-│   └── plug.vim
-├── init.vim
-├── readme.md
-├── tmp   //临时文件
-│   └── backup //备份文件
-│       ├── 1.c.swp
-│       └── init.vim~
-└── vimconfig
-    └── look.vim
-```
+插件管理器：lazy.nvim
 
 # 所有插件的作用
 
-# Keyboard Shortcuts
-
-## Basic Editor Feature
-
-### The Most Basics
-
-``
-
-# Plugins Keybindings
-
-## AutoCompletion
-
-### coc(AutoCompletion)
-
-# 使用说明
-
 ## Plugins Keybindings
 
-## AutoCompletion
+## COC自动补全
 
 [COC(AutoCompletion)](https://github.com/neoclide/coc.nvim)
 
@@ -216,7 +187,7 @@ gc 注释选中行，取消选中行注释
 # C++开发
 
 通过CMAKE生成补全文件  
-cd build  
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..  
-mv compile_commands.json ../
+`cd build`  
+`cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..`  
+`mv compile_commands.json ..`
 
