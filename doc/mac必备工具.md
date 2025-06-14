@@ -9,8 +9,9 @@
   * 安装图形化程序, `brew --cask install 包名`
 
 # 输入法`Rime`
+很好的解决了MAC Capslock键糟糕的切换大小写体验问题  
 
-[Rime输入法](https://www.bilibili.com/video/BV1GA411U7CF/?share_source=copy_web&vd_source=495c96d5090bfe441e8adfbe5fb0176c)
+[Rime输入法配置教程](https://www.bilibili.com/video/BV1GA411U7CF/?share_source=copy_web&vd_source=495c96d5090bfe441e8adfbe5fb0176c)
 
 # 快捷键统一软件
 
