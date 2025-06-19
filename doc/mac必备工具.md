@@ -1,3 +1,6 @@
+# 有一些插件需呀关闭SIP  
+一定要先关机，不要重启  
+[关闭SIP教程](https://blog.csdn.net/weixin_45285213/article/details/137787042)  
 # 包管理器`homebrew`
 
 * `brew list` 查看已经安装的软件
@@ -39,4 +42,3 @@ OCR表格识别
 1、安装`oh my zsh`,百度搜索即可
 2、配置`~.zshrc`
 
-# lazygit
