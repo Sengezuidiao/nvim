@@ -17,7 +17,7 @@ keymap.set("n", "<leader><Right>", "<C-w>l")
 keymap.set("n", "<leader><Up>", "<C-w>k")
 keymap.set("n", "<leader><Down>", "<C-w>j")
 keymap.set("n", "<leader>q", "<C-w>q>")
-keymap.set("n", "<leader>w", ":w<CR>")
+keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>+", ":vertical resize +5<CR>")
 vim.keymap.set("n", "<leader>-", ":vertical resize -5<CR>")
 -- coc-translator

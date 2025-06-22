@@ -36,3 +36,6 @@ Remove-Item -Path Alias:curl -ErrorAction SilentlyContinue
 
 # windows Terminal 美化  
 
+# WSL 
+wsl --update 
+wsl --install
