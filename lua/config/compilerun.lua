@@ -20,6 +20,8 @@ function compile_and_run()
 		vim.cmd("split | resize -15")
 		-- 打开终端运行
 		vim.cmd("term ./" .. output)
+  elseif filetype == "qml" then
+    vim.fn.system("qml " .. filename)
 	else
 		print("Unsupported filetype: " .. filetype)
 	end

@@ -36,5 +36,7 @@
     "2",
     "-i"
   ],
-  "cmake.formatter": "cmake-format"
+  "cmake.formatter": "cmake-format",
+  "stylua.styluaPath": "/opt/homebrew/bin/stylua"
+  
 }
