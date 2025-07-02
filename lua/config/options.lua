@@ -36,6 +36,11 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 -- vim.cmd[[colorscheme tokyonight-moon]]
+opt.list = true
+opt.listchars = {
+  tab = '| ',
+  trail = '▫'
+}
 
 -- 光标位置还原到上次关闭文件时的位置
 vim.api.nvim_create_autocmd("BufReadPost", {
