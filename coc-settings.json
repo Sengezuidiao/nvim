@@ -31,11 +31,6 @@
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/Ultisnips/"
   ],
-  "coc-qml.qmlformatArgs": [
-    "-w",
-    "2",
-    "-i"
-  ],
   "cmake.formatter": "cmake-format",
   "stylua.styluaPath": "/opt/homebrew/bin/stylua"
   
