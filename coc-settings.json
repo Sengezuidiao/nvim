@@ -1,37 +1,45 @@
 {
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        "build",
-        "main.c"
-      ],
-      "filetypes": [
-        "c",
-        "cc",
-        "cpp",
-        "c++",
-        "objc",
-        "objcpp"
-      ]
-    },
-    "lua": {
-      "command": "lua-language-server",
-      "filetypes": [
-        "lua"
-      ]
-    }
-  },
-  "markdownlint.config": {
-    "default": true,
-    "line_length": false
-  },
-  "snippets.ultisnips.directories": [
-    "$HOME/.config/nvim/Ultisnips/"
-  ],
-  "cmake.formatter": "cmake-format",
-  "stylua.styluaPath": "/opt/homebrew/bin/stylua"
-  
+	"languageserver": {
+		"clangd": {
+			"command": "clangd",
+			"rootPatterns": [
+				"compile_flags.txt",
+				"compile_commands.json",
+				"build",
+				"main.c"
+			],
+			"args": ["--fallback-style=Microsoft"],
+			"filetypes": [
+				"c",
+				"cc",
+				"cpp",
+				"c++",
+				"objc",
+				"objcpp"
+			],
+			"disabledFeatures": [
+				"formatting"
+			],
+			"formatterPriority": 1
+		},
+		"lua": {
+			"command": "lua-language-server",
+			"filetypes": [
+				"lua"
+			],
+			"rootPatterns": [
+				".git"
+			]
+		}
+	},
+	"markdownlint.config": {
+		"default": true,
+		"line_length": false
+	},
+	"snippets.ultisnips.directories": [
+		"$HOME/.config/nvim/Ultisnips/"
+	],
+	"cmake.formatter": "cmake-format",
+	"Lua.workspace.checkThirdParty": false,
+	"inlayHint.display": false
 }

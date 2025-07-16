@@ -7,8 +7,6 @@ return {
 			"coc-markdownlint",
 			"coc-cmake",
 			"coc-translator",
-			"coc-lua",
-			"coc-stylua",
 			"coc-snippets",
 			"coc-vimlsp",
 		}
