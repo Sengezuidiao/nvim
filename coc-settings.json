@@ -8,7 +8,13 @@
 				"build",
 				"main.c"
 			],
-			"args": ["--fallback-style=Microsoft"],
+			"args": [
+				"--fallback-style=Microsoft",
+				"--header-insertion=never",
+				"--clang-tidy",
+				"--completion-style=detailed",
+				"--cross-file-rename=true"
+			],
 			"filetypes": [
 				"c",
 				"cc",
