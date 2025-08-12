@@ -9,6 +9,7 @@ return {
 			"coc-translator",
 			"coc-snippets",
 			"coc-vimlsp",
+			"coc-pyright"
 		}
 	end,
 }
