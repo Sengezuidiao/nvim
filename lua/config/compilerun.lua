@@ -11,7 +11,7 @@ function compile_and_run()
 		vim.o.splitbelow = true
 		vim.cmd("split | resize -5")
 		-- 打开终端并编译运行
-		vim.cmd("term gcc " .. filename .. " -o " .. output .. " && time ./" .. output)
+		vim.cmd("term gcc " .. filename .. " -o " .. output .. " && ./" .. output)
 	elseif filetype == "cpp" then
 		-- 编译
 		vim.fn.system("g++ -std=c++11 " .. filename .. " -Wall -o " .. output)
