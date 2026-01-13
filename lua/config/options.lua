@@ -1,6 +1,7 @@
 local opt = vim.opt
 -- markdown preview theme
 vim.g.mkdp_markdown_css = vim.fn.expand("~/.config/nvim/mdtheme/spring.css")
+vim.g.mkdp_theme = "light"
 -- disabling the Perl provider
 vim.g.loaded_perl_provider = 0
 

@@ -58,5 +58,6 @@
 	],
 	"cmake.formatter": "cmake-format",
 	"inlayHint.display": false,
-	"snippets.ultisnips.pythonPrompt": false
+	"snippets.ultisnips.pythonPrompt": false,
+	"suggest.autoTrigger": "always"
 }
