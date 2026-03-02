@@ -47,17 +47,32 @@
 				".git"
 			],
 			"trace.server": "verbose"
-		}
-	},
-	"markdownlint.config": {
-		"default": true,
-		"line_length": false
-	},
-	"snippets.ultisnips.directories": [
-		"$HOME/.config/nvim/Ultisnips/"
-	],
-	"cmake.formatter": "cmake-format",
-	"inlayHint.display": false,
-	"snippets.ultisnips.pythonPrompt": false,
-	"suggest.autoTrigger": "always"
-}
+		},
+		"bash": {
+			"command": "bash-language-server",
+			"args": [
+				"start"
+			],
+			"filetypes": [
+				"sh",
+				"bash"
+			],
+			"rootPatterns": [
+				".git",
+				".bashrc",
+				".profile"
+			],
+			"initializationOptions": {}
+		},
+		"markdownlint.config": {
+			"default": true,
+			"line_length": false
+		},
+		"snippets.ultisnips.directories": [
+			"$HOME/.config/nvim/Ultisnips/"
+		],
+		"cmake.formatter": "cmake-format",
+		"inlayHint.display": false,
+		"snippets.ultisnips.pythonPrompt": false,
+		"suggest.autoTrigger": "always"
+	}
