@@ -61,8 +61,7 @@
 				".git",
 				".bashrc",
 				".profile"
-			],
-			"initializationOptions": {}
+			]
 		},
 		"markdownlint.config": {
 			"default": true,
@@ -75,4 +74,6 @@
 		"inlayHint.display": false,
 		"snippets.ultisnips.pythonPrompt": false,
 		"suggest.autoTrigger": "always"
-	}
+	},
+	"snippets.ultisnips.pythonPrompt": false
+}

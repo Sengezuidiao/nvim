@@ -1,15 +1,15 @@
 [TOC]
 
-# NeoVim 使用的一个心路历程
+## 包管理器
+windows的CLI包管理器：
+WinGet
+Scoop
+Chocolatey
+MacOS、Linux:
+brew
 
-## 捣鼓 vim 个人认为需要的知识储备
 
-1. github 的使用，去了解怎么配置，用来管理自己的配置，相当于其实是做了一个云备份
-1. 环境变量的作用的认知，还有对系统路径的了解，比如说 windows 的$env:LOCALAPPDATA 这种奇奇怪怪的东西是干什么用的
-1. 包管理器，windows 下面的 cargo，winget，macos 的 brew，以其包管理器下载东西的路径，方便后期卸载的垃圾清理和 bug 调式，linux 的 apt，当然找不到也没关系，这些都可以借助 everything 找到
-1. lua、vimscript、开发语言环境的配置，因为 neovim 很多插件依赖自己编译构建的，这就需要配置好编译环境，当然大部分都是可以通过包管理器输入文档给的指令去解决
 
-# Neovim 至少需要具备哪些东西
 
 ## 主要用途：编程
 
@@ -52,6 +52,13 @@
 
 The virtual env used here is Python.  
 `let g:python3_host_prog=$HOME.'/.config/nvim/python/bin/python'`
+
+cd ~/.config/nvim
+python -m venv python
+source ./python/bin/activate
+pip install cmake-format
+pip install pynvim
+pip install cmake-language-server
 
 ## And also
 
