@@ -69,11 +69,9 @@
 		},
 		"snippets.ultisnips.directories": [
 			"$HOME/.config/nvim/Ultisnips/"
-		],
-		"cmake.formatter": "cmake-format",
-		"inlayHint.display": false,
-		"snippets.ultisnips.pythonPrompt": false,
-		"suggest.autoTrigger": "always"
+		]
 	},
-	"snippets.ultisnips.pythonPrompt": false
+	"inlayHint.display": false,
+	"snippets.ultisnips.pythonPrompt": false,
+	"suggest.autoTrigger": "always"
 }
