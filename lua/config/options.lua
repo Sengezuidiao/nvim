@@ -5,6 +5,10 @@ vim.g.mkdp_theme = "light"
 -- disabling the Perl provider
 vim.g.loaded_perl_provider = 0
 
+-- 编码
+opt.encoding = "utf-8"
+opt.fileencodings = { 'utf-8', 'gbk', 'gb18030', 'gb2312', 'latin1' }
+
 -- 行号
 -- opt.relativenumber = true
 opt.number = true
