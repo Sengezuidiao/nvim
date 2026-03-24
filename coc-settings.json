@@ -62,16 +62,12 @@
 				".bashrc",
 				".profile"
 			]
-		},
-		"markdownlint.config": {
-			"default": true,
-			"line_length": false
-		},
-		"snippets.ultisnips.directories": [
-			"$HOME/.config/nvim/Ultisnips/"
-		]
+		}
 	},
-	"inlayHint.display": false,
+	"snippets.ultisnips.directories": [
+		"$HOME/.config/nvim/Ultisnips/"
+	],
+	"inlayHint.enable": false,
 	"snippets.ultisnips.pythonPrompt": false,
 	"suggest.autoTrigger": "always"
 }

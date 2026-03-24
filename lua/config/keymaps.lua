@@ -23,8 +23,6 @@ vim.keymap.set("n", "<leader>-", ":vertical resize -5<CR>")
 -- coc-translator
 keymap.set("n", "ts", "<Plug>(coc-translator-p)")
 -- ---------- 插件 ---------- ---
--- nvim-tree
-keymap.set("n", "tt", ":NvimTreeToggle<CR>")
 
 -- markdownpreviw
 keymap.set("n", "<leader>mr", ":MarkdownPreview<CR>")
@@ -34,5 +32,3 @@ vim.keymap.set("c", "<C-a>", "<Home>")
 vim.keymap.set("c", "<C-e>", "<End>")
 vim.keymap.set("c", "<C-b>", "<Left>")
 vim.keymap.set("c", "<C-f>", "<Right>")
-vim.keymap.set("c", "<M-b>", "<S-Left>")
-vim.keymap.set("c", "<M-f>", "<S-Right>")
