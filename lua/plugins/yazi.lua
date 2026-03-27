@@ -16,9 +16,7 @@ return {
 	},
 	opts = {
 		open_for_directories = false,
-		keymaps = {
-			show_help = "?",
-		},
+		floating_window_scaling_factor = 1,
 	},
 	init = function()
 		vim.g.loaded_netrwPlugin = 1
