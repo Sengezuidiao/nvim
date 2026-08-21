@@ -69,5 +69,8 @@
 	],
 	"inlayHint.enable": false,
 	"snippets.ultisnips.pythonPrompt": false,
-	"suggest.autoTrigger": "always"
+	"suggest.autoTrigger": "always",
+	"markdownlint.config": {
+		"default": false
+	}
 }

@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>-", ":vertical resize -5<CR>")
 keymap.set("n", "ts", "<Plug>(coc-translator-p)")
 -- ---------- 插件 ---------- ---
 
--- markdownpreviw
-keymap.set("n", "<leader>mr", ":MarkdownPreview<CR>")
+-- markdown 渲染开关（render-markdown）
+keymap.set("n", "<leader>mr", "<cmd>RenderMarkdown toggle<cr>")
 
 -- Ex 模式下采用Emacs风格
 vim.keymap.set("c", "<C-a>", "<Home>")

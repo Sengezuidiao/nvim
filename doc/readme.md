@@ -75,7 +75,28 @@ pip install cmake-language-server
 
 # 所有插件的作用
 
-## Plugins Keybindings
+> 插件配置文件位于 `lua/plugins/`，由 lazy.nvim 按需懒加载；锁定版本见 `lazy-lock.json`。
+
+| 插件 | 配置文件 | 作用 |
+| ---- | -------- | ---- |
+| lazy.nvim | `lua/config/lazy.lua` | 插件管理器 |
+| gruvbox.nvim | `plugins/colorscheme.lua` | 颜色主题（gruvbox） |
+| nvim-treesitter | `plugins/treesitter.lua` | 语法高亮（treesitter），markdown 渲染依赖 |
+| bufferline.nvim | `plugins/bufferline.lua` | 顶部 buffer 标签栏 |
+| lualine.nvim | `plugins/lualine.lua` | 底部状态栏 |
+| coc.nvim | `plugins/coc-nvim.lua` | 补全 / LSP / 诊断 / 片段 |
+| mini.pairs | `plugins/minipairs.lua` | 括号自动配对 |
+| Comment.nvim | `plugins/comment.lua` | 快速注释 / 取消注释 |
+| grug-far.nvim | `plugins/grug-far.lua` | 文件内搜索替换 |
+| which-key.nvim | `plugins/whichkey.lua` | 快捷键提示 |
+| yazi.nvim | `plugins/yazi.lua` | 文件管理器 |
+| cmake-tools.nvim | `plugins/cmake-tools.lua` | CMake 生成 / 编译 / 运行 |
+| vim-table-mode | `plugins/markdown-table.lua` | Markdown 表格编辑 |
+| img-paste.vim | `plugins/markdown-image.lua` | Markdown 粘贴剪贴板图片 |
+| render-markdown.nvim | `plugins/render-markdown.lua` | Markdown 实时渲染 |
+| csv.vim | `plugins/csv.lua` | CSV 文件编辑 |
+| DoxygenToolkit.vim | `plugins/Doxygen.lua` | 生成 Doxygen 注释 |
+| lazydev.nvim | `plugins/lazydev.lua` | Lua 开发辅助 |
 
 ## COC自动补全
 
@@ -83,25 +104,38 @@ pip install cmake-language-server
 
 # coc 插件管理
 
-[extensions](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+coc 扩展通过 `coc_global_extensions` 自动安装（见 `lua/plugins/coc-nvim.lua`），当前启用：
 
-coc-yank provides yank highlights & history.
-coc-css for css, scss and less.
-coc-clangd for C/C++/Objective-C, use clangd
-coc-explorer File Explorer extension
-coc-html for html, handlebars and razor.
-coc-docker for dockerfile.
-coc-json for json.
-coc-lists provides some basic lists like fzf.vim.
-coc-prisma for Prisma schema integration.
-coc-yaml for yaml
+- `coc-json`：JSON 补全 / 校验
+- `coc-cmake`：CMake 支持
+- `coc-translator`：翻译（快捷键 `ts`）
+- `coc-snippets`：片段（配合 Ultisnips）
+- `coc-vimlsp`：Vimscript 支持
+- `coc-pyright`：Python 补全
+
+## 语言服务器（coc-settings.json）
+
+| 语言 | 服务器 |
+| ---- | ------ |
+| C / C++ / Objective-C | clangd |
+| Lua | lua-language-server |
+| QML | qmlls |
+| Bash | bash-language-server |
+
+管理扩展命令：`:CocInstall <ext>`、`:CocUninstall <ext>`、`:CocList extensions`。
 
 # 插件使用说明
 
-`itchyny/vim-cursorword` 光标下的单词添加下划线显示，文件内有的都添加
-
-- 代码高亮 nvim-treesitter  
-  `nvim-treesitter/nvim-treesitter`
+- **顶部 buffer 栏**：bufferline.nvim，用 `<Space>` + 方向键切换窗口
+- **底部状态栏**：lualine.nvim（主题 gruvbox）
+- **括号配对**：mini.pairs，输入 `(` `[` `{` `"` `'` 自动补全配对
+- **快速注释**：Comment.nvim，`gcc` 注释单行、`gc` 注释选中
+- **搜索替换**：grug-far.nvim，`<Space>sr`
+- **快捷键提示**：which-key.nvim，按 `<Space>` 后等待即可弹出提示
+- **文件管理器**：yazi.nvim，`tt`
+- **翻译**：coc-translator，`ts` 翻译光标下单词
+- **Doxygen 注释**：DoxygenToolkit.vim，`:Dox` 生成函数注释（C/C++）
+- **表格**：vim-table-mode，`:TableModeToggle` 进入表格模式，`<Space>tr` 对齐、`<Space>mts` 排序
 
 # windows 配置 neovim 的坑
 
@@ -141,60 +175,123 @@ $env:LOCALAPPDATA\nvim\nvim\site\pack
 
 # 快捷键
 
-## 自动补全（COC 插件）
+> `<Space>` 是 leader 键。完整定义见 `lua/config/keymaps.lua` 与 `lua/config/options.lua`。
 
-| 快捷键          | 作用                                                          | 模式 |
-| --------------- | ------------------------------------------------------------- | ---- |
-| `Space` `y`     |                                                               |      |
-| `g` `d`         | Go define,跳转到定义出，配合`Ctrl` `o`， `Ctrl` `i`可以来回跳 | `n`  |
-| `g` `r`         |                                                               |      |
-| `g` `i`         |                                                               |      |
-| `Space` `r` `n` | 变量重命名                                                    | `n`  |
-| `Ctrl` `j`      | 跳转到下一个参数（占位符）                                    | `i`  |
-|                 |                                                               |      |
+## 通用 / 编辑
 
-## 左侧文件浏览器（nvim-tree）
+| 快捷键 | 作用 | 模式 |
+| ------ | ---- | ---- |
+| `<Space>` `<CR>` | 取消搜索高亮 | `n` |
+| `<Space>` `w` | 保存文件 | `n` |
+| `<Space>` `q` | 关闭当前窗口 | `n` |
+| `<Space>` `<方向键>` | 切换到对应方向窗口 | `n` |
+| `<Space>` `=` / `-` | 垂直分屏加宽 / 减窄 | `n` |
+| `<C-a>` / `<C-e>` | 插入模式跳到行首 / 行尾 | `i` |
+| `<Space>` `/` | 格式化当前文件（`:Format`） | `n` |
+| `<F5>` | 编译并运行当前文件（C/C++/QML） | `n` |
+| `<Space>` `s` `r` | 搜索替换（grug-far） | `n`/`x` |
+| `t` `s` | 翻译光标下单词（coc-translator） | `n` |
+| `<Space>` `?` | 显示 buffer 本地快捷键（which-key） | `n` |
 
-| 快捷键  | 作用           | 模式 |
-| ------- | -------------- | ---- |
-| `t` `t` | 打开左侧文件树 | `n`  |
-| `q`     | 退出文件树     | `n`  |
-|         |                |      |
+## 自动补全 / LSP（COC）
 
-快速注释，取消注释(numToStr/Comment.nvim)
-gcc 注释单行，取消单行注释
-gc 注释选中行，取消选中行注释
+| 快捷键 | 作用 | 模式 |
+| ------ | ---- | ---- |
+| `<TAB>` / `<S-TAB>` | 补全候选下 / 上一项 | `i` |
+| `<CR>` | 确认选中补全项 | `i` |
+| `<C-space>` | 触发补全 | `i` |
+| `<C-j>` | 触发片段并跳到下一占位符 | `i` |
+| `[` `g` / `]` `g` | 上一个 / 下一个诊断 | `n` |
+| `g` `d` | 跳转到定义 | `n` |
+| `g` `y` | 跳转到类型定义 | `n` |
+| `g` `i` | 跳转到实现 | `n` |
+| `g` `r` | 查找引用 | `n` |
+| `K` | 显示光标下符号文档 | `n` |
+| `<Space>` `r` `n` | 重命名符号 | `n` |
+| `<Space>` `f` | 格式化选中 | `n`/`x` |
+| `<Space>` `z` | 应用最优快速修复 | `n` |
+| `<Space>` `a` `c` / `a` `s` | 光标处 / 源码级代码操作 | `n` |
+| `<Space>` `a` | 诊断列表（CocList diagnostics） | `n` |
+| `<Space>` `o` | 文档大纲 | `n` |
+| `<Space>` `s` | 工作区符号搜索 | `n` |
+| `<Space>` `e` | 扩展管理 | `n` |
+| `<Space>` `c` | 命令列表 | `n` |
+| `<Space>` `j` / `k` | 下一个 / 上一个列表项 | `n` |
+| `<Space>` `p` | 恢复最近一次 coc 列表 | `n` |
 
-## MarkDown
+命令：`:Format` 格式化、`:Fold` 折叠、`:OR` 整理 import。
 
-| Shortcut             | What it creates       | mode |
-| -------------------- | --------------------- | ---  |
-| `,n`                 | ---                   | `n`  |
-| `,b`                 | **Bold** text         | `n`  |
-| `,s`                 | ~~sliced~~ text       | `n`  |
-| `,i`                 | *italic* text         | `n`  |
-| `,d`                 | `code block`          | `n`  |
-| `,c`                 | big `block of code`   | `n`  |
-| `,m`                 | - [ ] check mark      | `n`  |
-| `,p`                 | picture               | `n`  |
-| `,a`                 | [link]()              | `n`  |
-| `,1`                 | # H1                  | `n`  |
-| `,2`                 | ## H2                 | `n`  |
-| `,3`                 | ### H3                | `n`  |
-| `,4`                 | #### H4               | `n`  |
-| `<leader>` `t` `s`   | MarkDown 表格排序     | `n`  |
-| `<leader>` `t` `r`   | MarkDown 表格对齐     | `n`  |
-| `<leader>` `t` `m`   | 打开表格模式          | `n`  |
-| `leader` `p`         | 粘贴剪切板的图片      | `n`  |
+## 快速注释（Comment.nvim）
 
-# TODO
+| 快捷键 | 作用 | 模式 |
+| ------ | ---- | ---- |
+| `gcc` | 注释 / 取消注释当前行 | `n` |
+| `gc` | 注释 / 取消注释选中行 | `v` |
 
-文件内容搜索
+## 文件管理器（yazi.nvim）
+
+| 快捷键 | 作用 | 模式 |
+| ------ | ---- | ---- |
+| `t` `t` | 打开 yazi（浮动窗口） | `n`/`v` |
+
+## Doxygen 注释
+
+| 命令 | 作用 |
+| ---- | ---- |
+| `:Dox` | 生成函数头注释（C/C++） |
+
+## Markdown
+
+> `,` 系列片段映射定义于 `lua/config/markdown.lua`，目前被 `disable_markdown_map=true` 整体禁用；如需启用，把该变量改为 `false`。
+
+实时渲染由 render-markdown.nvim 提供（`plugins/render-markdown.lua`）：普通模式渲染、插入模式显示源码，`<Space>mr` 开关渲染。
+
+| 快捷键 | 作用 | 模式 |
+| ------ | ---- | ---- |
+| `,n` | 插入 `---` 分隔线 | `i` |
+| `,b` | 粗体 | `i` |
+| `,s` | 删除线 | `i` |
+| `,i` | 斜体 | `i` |
+| `,d` | 行内代码 | `i` |
+| `,c` | 代码块 | `i` |
+| `,m` | `- [ ]` 待办 | `i` |
+| `,p` | 插入图片 | `i` |
+| `,a` | 插入链接 | `i` |
+| `,1` ~ `,4` | H1 ~ H4 标题 | `i` |
+| `,l` | 分隔线 | `i` |
+| `,x` | `- [ ]` 任务项 | `i` |
+| `,f` / `<C-e>` | 跳到下一个占位符并清空 | `i` |
+| `<Space>` `t` `r` | 表格对齐 | `n` |
+| `<Space>` `m` `t` `s` | 表格排序 | `n` |
+| `<Space>` `p` | 粘贴剪贴板图片 | `n` |
+| `<Space>` `m` `r` | Markdown 实时渲染开关 | `n` |
+| `:TableModeToggle` | 进入 / 退出表格模式 | `-` |
+
+# TODO / 已知问题
+
+- [ ] `<Space>q` 关闭窗口映射多了个 `>`（`keymaps.lua`），当前失效
+- [ ] lualine 配置键 `options` 应为 `opts`，gruvbox 主题暂未生效
+- [ ] yazi 用 `enable=false` 拼写错误，应为 `enabled=false`，当前实际被加载
 
 # C++开发
 
-通过CMAKE生成补全文件  
-`cd build`  
-`cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..`  
-`mv compile_commands.json ..`
+## 一键编译运行
 
+在 C / C++ / QML 文件中按 `<F5>` 编译并运行当前文件，逻辑见 `lua/config/compilerun.lua`。
+
+## CMake 项目（cmake-tools.nvim）
+
+- `:CMakeGenerate` 生成构建（默认已导出 `compile_commands.json`）
+- `:CMakeBuild` 构建
+- `:CMakeRun` 运行
+- 保存时自动重新生成（`cmake_regenerate_on_save = true`）
+
+## clangd 补全
+
+clangd 需要 `compile_commands.json` 才能正确解析头文件与宏。cmake-tools 会通过软链接自动生成，一般无需手动操作。手动方式：
+
+```
+cd build
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+mv compile_commands.json ..
+```

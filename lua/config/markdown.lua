@@ -1,6 +1,10 @@
+vim.g.disable_markdown_map = true
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
+		if vim.g.disable_markdown_map then
+			return
+		end
 		-- vim.keymap.set("n", "<leader>w", "yiWi[<esc>Ea](<esc>pa", { buffer = true })
 		vim.keymap.set("i", ",f", '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', { buffer = true })
 		vim.keymap.set("i", "<C-e>", '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', { buffer = true })
